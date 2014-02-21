@@ -5,6 +5,7 @@ MAINTAINER  Ross Riley "riley.ross@gmail.com"
 # Install PHP5 and modules
 RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main universe" > /etc/apt/sources.list
 RUN apt-get update
+RUN apt-get install -y curl
 RUN apt-get -y install php5-fpm php5-mysql php-apc php5-mcrypt php5-curl php5-gd php5-json php5-cli
 RUN sed -i -e "s/short_open_tag = Off/short_open_tag = On/g" /etc/php5/fpm/php.ini
 RUN curl -sS https://getcomposer.org/installer | php
